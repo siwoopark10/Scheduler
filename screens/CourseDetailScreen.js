@@ -11,12 +11,6 @@ const Field = ({ label, value }) => {
 }
 
 const CourseDetailScreen = ({route}) => {
-    // const course = {
-    //     "id": "F101",
-    //     "title": "Computer Science: Concepts, Philosophy, and Connections",
-    //     "meets": "MWF 11:00-11:50"
-    // };
-
     const course = route.params.course
 
     return (
