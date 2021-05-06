@@ -3,11 +3,13 @@ import { ActivityIndicatorComponent, SafeAreaView, ScrollView, StyleSheet, Text 
 import CourseList from '../components/CourseList'
 import UserContext from '../UserContext';
 import CourseEditScreen from './CourseEditScreen';
-import {firebase} from '../firebase';
+import { firebase } from '../firebase';
+
 
 const Banner = ({ title }) => (
     <Text style={styles.bannerStyle}>{title || '[loading...]'}</Text>
 );
+
 
 const fixCourses = json => ({
     ...json,
@@ -31,18 +33,6 @@ const ScheduleScreen = ({ navigation }) => {
         return () => { db.off('value', handleData); };
     }, []);
 
-    // const url = 'https://courses.cs.northwestern.edu/394/data/cs-courses.php';
-
-    // useEffect(() => {
-    //     const fetchSchedule = async () => {
-    //         const response = await fetch(url);
-    //         if (!response.ok) throw response;
-    //         const json = await response.json();
-    //         setSchedule(json);
-    //     }
-    //     fetchSchedule();
-    // }, []);
-
     return (
         <ScrollView>
             <SafeAreaView style={styles.container}>
@@ -52,6 +42,7 @@ const ScheduleScreen = ({ navigation }) => {
         </ScrollView>
     );
 }
+
 
 const styles = StyleSheet.create({
     container: {
